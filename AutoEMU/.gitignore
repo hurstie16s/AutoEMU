@@ -1,0 +1,9 @@
+AutoEMU
+*.log
+Logs/
+WorkSpace/Machines/
+WorkSpace/TestScripts/
+WorkSpace/FirmwareFiles/
+WorkSpace/Drives/
+*.yaml
+tests*
