@@ -5,7 +5,8 @@ Completed while studying for the degree of MEng Computer Science at the Universi
 Thank you to my supervisor, Dr Nawfal Fadhel, for his continued encouragement and support for the duration of this project.
 
 The project works to bring together all the individual tools required for emulating a device into a single, automated application.
-This hope to simplify the process to encourage device emulation and virtualisation.
+This hope to simplify the process to encourage device emulation and virtualisation.  
+The tool is far from complete and work will be continued on it.
 
 Currently the tool is only compatiable with Debian/Ubuntu Linux distributions. 
 
