@@ -85,3 +85,5 @@ Then run
 chmod 755 extract-firmware.sh
 ```
 to ensure it can be executed.
+
+*This issue should have now been fixed*
