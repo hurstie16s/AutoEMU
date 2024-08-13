@@ -35,26 +35,24 @@ sudo apt-get install libncurses-dev bison flex libssl-dev libelf-dev make
 
 The tool uses the firmware-mod-kit to extract the root file system from a firmware binary.
 The tool can be found at https://github.com/rampageX/firmware-mod-kit
-The extract-firmware.sh script has been slightly modified to fit the projects needs
+The extract-firmware.sh script has been slightly modified to fit the project needs
 
 The readelf tool is used to analyse ELF executables found within the firmware, to extract the architecture that the firmware was built for.
 This hopes to avoid any required user interaction to virtualise a device.
 
 The QEMU tool is used to provide full system emulation.
-The tool is avaliable at https://www.qemu.org/
+The tool is available at https://www.qemu.org/
 
 The BuildRoot tool is used to build custom kernels for the emulated devices.
-It is packaged within the WorkSpace of AutoEMU but is also avaliable for download at https://buildroot.org/download.html
+It is packaged within the WorkSpace of AutoEMU but is also available for download at https://buildroot.org/download.html
 
 
 ## Using the Tool ##
 
 There are two ways to use this tool.
-It can be used as an interactive terminal tool, or as a single command with tags.
+It can be used as an interactive terminal tool or as a single command with tags.
 
 To Use the tool as an interactive terminal, run the AutoEMU.exe binary.
-
-To use the tool in a single command run ./AutoEMU.exe with different tags to run different programs.
 
 ## Installing ##
 
@@ -62,28 +60,22 @@ Download the latest zip file in the releases section (not currently avaliable).
 
 This contains the AutoEMU binary and a WorkSpace directory, containing a directory tree.
 
-In this directory there is also the contents of the firmware-mod-kit repositiry, mentioned above with a modified extract-firmware.sh script.
-Once downloaded, run the binary and it will build a configuration.
+In this directory, the contents of the firmware-mod-kit repository are also mentioned above, with a modified extract-firmware.sh script.
+Once downloaded, run the binary, and it will build a configuration.
 
-When asked for the path to the workspace directory, ensure /WorkSpace is included in the path, unless the /WorkSpace directory is present in your current working directory.
+When asked for the path to the workspace directory, ensure /WorkSpace is included in the path unless the /WorkSpace directory is present in your current working directory.
 
-The easiest way to install AutoEMU is to download the zip file in the releases section (not currently avaliable), unzip the file and run
+The easiest way to install AutoEMU is to download the zip file in the releases section (not currently available), unzip the file and run
 ```sh
 ./AutoEMU -config -pwd -pwd
 ```
 
-## Possible Issues ##
+## Known Issues ##
 
-If you run into repeated firmware extraction errors accross multiple firmwares, it is possible that the permissions for the firmware-mod-kit have been changed.
+Currently, AutoEMU will not determine the machine board which should be used in the QEMU virtual machine.  
 
-The easiest way to currently fix this is to download the contents of the reposity that is mentioned in the tools section and copy its contents into /WorkSpace/FirmwareMod
-
-You should also replace the extract-firmware.sh file with the one in this directory.
-
-Then run
-```sh
-chmod 755 extract-firmware.sh
-```
-to ensure it can be executed.
-
-*This issue should have now been fixed*
+## Planned Updates ##
+- Addition of a GUI
+- Improved extraction of the root file system, kernel and initramfs
+- Support for a wider range of filesystems
+- Decreased dependence on 3rd party tools, in particular FMK and Buildroot
